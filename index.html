@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คู่มือการใช้งานแอป GoodCalc</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap');
+        
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --accent: #10b981;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --card-bg: #ffffff;
+        }
 
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .header h1 { margin: 0; font-size: 2.5rem; }
+        .header p { margin: 10px 0 0; opacity: 0.9; }
+
+        .section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        h3 { color: var(--secondary); margin-top: 20px; }
+
+        .badge {
+            background: var(--accent);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .mode-box {
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .plus { border-left: 5px solid var(--accent); background: #f0fdf4; }
+        .minus { border-left: 5px solid #ef4444; background: #fef2f2; }
+
+        .tip-card {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-container { grid-template-columns: 1fr; }
+            .header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>GoodCalc</h1>
+        <p>แอปบันทึกรายการขายและค่าใช้จ่ายแบบกดปุ่ม</p>
+    </div>
+
+    <div class="section">
+        <h2>GoodCalc คืออะไร?</h2>
+        <p>แอปช่วยบันทึกรายการขาย/ค่าใช้จ่ายแบบกดปุ่มแทนการพิมพ์เลขทีละบรรทัด เหมาะกับร้านที่มีเมนูหรือรายการคงที่ มีระบบคำนวณยอดรวมอัตโนมัติ เปิดได้หลาย “ช่องหน่วยความจำ” พร้อมกัน และสามารถพิมพ์หรือแชร์ใบสรุปได้ทันที</p>
+    </div>
+
+    <div class="section">
+        <h2>การเริ่มต้นใช้งานครั้งแรก</h2>
+        <p>เมื่อเปิดแอปครั้งแรก แอปจะพาไปหน้า <strong>กำหนดชื่อผู้ใช้งาน</strong> จนกว่าจะมีการใส่ชื่อและบันทึก โดยชื่อนี้จะถูกนำไปใช้ในหน้าสรุปและเอกสารที่สั่งพิมพ์</p>
+    </div>
+
+    <div class="section">
+        <h2>แท็บหลัก: คิดเงิน <span class="badge">หน้าหลัก</span></h2>
+        
+        <h3>1. แถบหน่วยความจำ (ด้านบน)</h3>
+        <ul>
+            <li>มี 10 ช่อง — เลื่อนซ้าย–ขวาเพื่อเลือกช่องใช้งาน</li>
+            <li>ตัวเลขใต้ชื่อช่องคือ จำนวนรายการในช่องนั้นๆ</li>
+        </ul>
+
+        <h3>2. ปุ่ม "สรุป"</h3>
+        <p>เปิดหน้าต่างสรุปของช่องที่เลือกอยู่ เพื่อดู ชื่อผู้ใช้, ชื่อช่อง, เวลาเริ่ม, ยอดรวม และรายการทั้งหมด (สามารถสั่งพิมพ์เป็น HTML ได้)</p>
+
+        <h3>3. ปุ่มควบคุมและโหมดการทำงาน</h3>
+        <div class="grid-container">
+            <div class="mode-box plus">
+                <strong>โหมดเพิ่ม (+)</strong><br>
+                <ul>
+                    <li>สินค้า: เพิ่มรายการ/รวมจำนวน</li>
+                    <li>%: คำนวณเพิ่มจากยอดรวมปัจจุบัน</li>
+                </ul>
+            </div>
+            <div class="mode-box minus">
+                <strong>โหมดลบ (−)</strong><br>
+                <ul>
+                    <li>สินค้า: ลดจำนวน (จากบรรทัดล่างสุด)</li>
+                    <li>%: เพิ่มเป็นส่วนลด (เปอร์เซ็นต์ติดลบ)</li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top:15px;">*ใช้ปุ่ม <strong>"ล้างทั้งหมด"</strong> เพื่อลบเฉพาะช่องที่เลือก และ <strong>"ลบล่าสุด"</strong> เพื่อลบทีละบรรทัด</p>
+    </div>
+
+    <div class="section">
+        <h2>แท็บหลัก: ตั้งค่า</h2>
+        <ul>
+            <li><strong>กำหนดชื่อผู้ใช้งาน:</strong> แก้ไขชื่อสำหรับใบเสร็จ/ใบสรุป</li>
+            <li><strong>กำหนดหน่วยความจำ:</strong> ตั้งชื่อ 10 ช่อง (ห้ามชื่อซ้ำกัน)</li>
+            <li><strong>หมวดหมู่ & ปุ่มกด:</strong> เพิ่มหรือลบหมวดหมู่และปุ่มสินค้า/เปอร์เซ็นต์ <em>(รองรับการนำเข้าจาก Excel)</em></li>
+        </ul>
+    </div>
+
+    <div class="tip-card">
+        <h3>💡 เคล็ดลับการใช้งาน</h3>
+        <ul>
+            <li><strong>หลายโต๊ะ / หลายคิว:</strong> สลับช่องหน่วยความจำด้านบนเพื่อแยกออเดอร์</li>
+            <li><strong>ลำดับการกด %:</strong> มีผลต่อยอดรวม เพราะจะอิงยอดก่อนหน้าเสมอ</li>
+            <li><strong>ช่วยเหลือ:</strong> ศึกษาข้อมูลเพิ่มเติมที่ <a href="https://teerarattanapon.github.io" target="_blank">teerarattanapon.github.io</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        © 2026 GoodCalc User Manual - จัดทำโดย ฟ้า
+    </div>
+</div>
+
+</body>
+</html>
