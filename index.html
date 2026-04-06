@@ -103,6 +103,7 @@
             border-radius: 12px;
             text-align: center;
             margin-top: 30px;
+            margin-bottom: 30px;
         }
 
         .btn-email {
@@ -129,38 +130,9 @@
         <p>Manage your sales with ease | บันทึกรายการขายง่ายๆ แค่ปลายนิ้ว</p>
     </div>
 
-    <!-- บล็อกแนะนำการใช้ Excel (เพิ่มใหม่) -->
-    <div class="section">
-        <h2>📊 Excel Import Data (Data Structure)</h2>
-        <div class="lang-section">
-            <div>
-                <p><strong>(TH) การเตรียมไฟล์ Excel:</strong> จัดเรียงข้อมูล 3 คอลัมน์หลัก คือ หมวดหมู่, ชื่อรายการ และราคา เพื่อนำเข้าข้อมูลปริมาณมากในครั้งเดียว</p>
-            </div>
-            <div>
-                <p><strong>(EN) Excel Preparation:</strong> Organize data into 3 columns: Category, Item Name, and Price for bulk importing.</p>
-            </div>
-        </div>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Category (หมวดหมู่)</th>
-                    <th>Item Name (ชื่ออาหาร)</th>
-                    <th>Price (ราคา)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>จานเดียว</td><td>ข้าวกะเพราหมูสับ</td><td>60</td></tr>
-                <tr><td>ของว่าง</td><td>ปอเปี๊ยะทอด</td><td>50</td></tr>
-                <tr><td>ยำ</td><td>ยำวุ้นเส้น</td><td>70</td></tr>
-                <tr><td>เครื่องดื่ม</td><td>ชาเย็น</td><td>40</td></tr>
-            </tbody>
-        </table>
-        <p style="font-size: 0.8rem; color: #64748b; margin-top: 10px;">* รองรับไฟล์นามสกุล .csv หรือ .xlsx ตามโครงสร้างด้านบน</p>
-    </div>
-
+    <!-- ส่วนเนื้อหาหลัก 2 ภาษา -->
     <div class="lang-section">
-        <!-- ภาษาไทย -->
+        <!-- Thai Version -->
         <div class="thai-version">
             <div class="section">
                 <h2>📌 เกี่ยวกับแอป</h2>
@@ -207,13 +179,44 @@
         </div>
     </div>
 
+    <!-- ส่วน Excel Import (ย้ายมาล่างสุด) -->
+    <div class="section">
+        <h2>📊 Excel Import Data (Data Structure)</h2>
+        <div class="lang-section">
+            <div>
+                <p><strong>(TH) การนำเข้าข้อมูล:</strong> คุณสามารถแก้ไขรายการอาหารและราคาผ่านไฟล์ Excel เพื่อความรวดเร็ว โดยจัดเรียงข้อมูลตามคอลัมน์: หมวดหมู่, ชื่ออาหาร, ราคา</p>
+            </div>
+            <div>
+                <p><strong>(EN) Data Import:</strong> You can quickly edit food items and prices via Excel. Please organize your columns as: Category, Item Name, Price.</p>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Category (หมวดหมู่)</th>
+                    <th>Item Name (ชื่ออาหาร)</th>
+                    <th>Price (ราคา)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>จานเดียว</td><td>ข้าวกะเพราหมูสับ</td><td>60</td></tr>
+                <tr><td>ของว่าง</td><td>ปอเปี๊ยะทอด</td><td>50</td></tr>
+                <tr><td>ยำ</td><td>ยำวุ้นเส้น</td><td>70</td></tr>
+                <tr><td>เครื่องดื่ม</td><td>ชาเย็น</td><td>40</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size: 0.8rem; color: #64748b; margin-top: 10px;">* รองรับไฟล์ .xlsx | Supports .xlsx formats.</p>
+    </div>
+
+    <!-- ส่วนติดต่อสอบถาม -->
     <div class="contact-box">
         <h3>📧 Need Help? | ต้องการความช่วยเหลือ?</h3>
-        <p>หากคุณโอ๋พบปัญหาการใช้งาน หรือมีคำแนะนำในการพัฒนาแอป สามารถติดต่อเราได้ที่</p>
+        <p>พบปัญหาการใช้งาน หรือมีคำแนะนำในการพัฒนาแอป สามารถติดต่อเราได้ที่</p>
         <p>If you encounter any issues or have suggestions, please contact us directly.</p>
         <a href="mailto:teerar.ssa@gmail.com" class="btn-email">teerar.ssa@gmail.com</a>
     </div>
-
+    
     <p style="text-align: center; color: #64748b; font-size: 0.8rem; margin-top: 30px;">
         © 2026 GoodCalc - มั่นใจในทุกยอดขาย | Confident in every sale
     </p>
