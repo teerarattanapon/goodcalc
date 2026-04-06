@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>คู่มือการใช้งาน GoodCalc</title>
+    <title>GoodCalc Manual - คู่มือการใช้งาน</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&family=Inter:wght@400;700&display=swap');
         
         :root {
             --primary: #1e3a8a;
@@ -17,7 +17,7 @@
         }
 
         body {
-            font-family: 'Sarabun', sans-serif;
+            font-family: 'Sarabun', 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -26,7 +26,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
         }
 
@@ -40,9 +40,15 @@
             margin-bottom: 25px;
         }
 
+        .lang-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
         .section {
             background: var(--card-bg);
-            padding: 30px;
+            padding: 25px;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
@@ -53,49 +59,65 @@
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 10px;
             margin-top: 0;
+            font-size: 1.4rem;
         }
 
-        h3 { color: var(--secondary); margin-top: 20px; }
+        h3 { color: var(--secondary); margin-top: 20px; font-size: 1.1rem; }
 
         .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 10px;
             margin: 15px 0;
         }
 
         .box {
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
+            font-size: 0.9rem;
         }
 
         .plus { border-left: 5px solid var(--accent); background: #f0fdf4; }
         .minus { border-left: 5px solid #ef4444; background: #fef2f2; }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th { background-color: #f8fafc; color: var(--primary); }
+
         .contact-box {
             background: #e0f2fe;
             border: 1px solid #bae6fd;
-            padding: 20px;
+            padding: 30px;
             border-radius: 12px;
             text-align: center;
+            margin-top: 30px;
         }
 
         .btn-email {
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 8px;
             text-decoration: none;
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: bold;
         }
 
-        .btn-email:hover { background: var(--secondary); }
-
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
+        @media (max-width: 768px) {
+            .lang-section { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -104,52 +126,96 @@
 <div class="container">
     <div class="header">
         <h1>GoodCalc Manual</h1>
-        <p>บันทึกรายการขายง่ายๆ แค่ปลายนิ้ว</p>
+        <p>Manage your sales with ease | บันทึกรายการขายง่ายๆ แค่ปลายนิ้ว</p>
     </div>
 
+    <!-- บล็อกแนะนำการใช้ Excel (เพิ่มใหม่) -->
     <div class="section">
-        <h2>📌 เกี่ยวกับแอป</h2>
-        <p>แอปช่วยบันทึกรายการขาย/ค่าใช้จ่ายแบบกดปุ่ม แทนการพิมพ์เลขทีละบรรทัด เหมาะสำหรับร้านที่มีรายการคงที่ มีระบบคำนวณยอดรวมอัตโนมัติ และรองรับการทำงานหลายคิวพร้อมกัน</p>
-    </div>
-
-    <div class="section">
-        <h2>🎮 วิธีการใช้งาน (หน้าคิดเงิน)</h2>
-        <h3>การจัดการหน่วยความจำ</h3>
-        <ul>
-            <li>สลับได้ <strong>10 ช่อง</strong> (เลื่อนแถบบนสุด) เพื่อแยกโต๊ะหรือคิว</li>
-            <li>ปุ่ม <strong>"สรุป"</strong> ใช้ดูยอดรวมและรายการทั้งหมด พร้อมสั่งพิมพ์ได้</li>
-        </ul>
-
-        <h3>โหมดการทำงาน</h3>
-        <div class="grid">
-            <div class="box plus">
-                <strong>โหมดเพิ่ม (+)</strong><br>
-                กดปุ่มเพื่อเพิ่มรายการ หรือรวมจำนวนสินค้าชนิดเดียวกัน
+        <h2>📊 Excel Import Data (Data Structure)</h2>
+        <div class="lang-section">
+            <div>
+                <p><strong>(TH) การเตรียมไฟล์ Excel:</strong> จัดเรียงข้อมูล 3 คอลัมน์หลัก คือ หมวดหมู่, ชื่อรายการ และราคา เพื่อนำเข้าข้อมูลปริมาณมากในครั้งเดียว</p>
             </div>
-            <div class="box minus">
-                <strong>โหมดลบ (−)</strong><br>
-                กดเพื่อลดจำนวน หรือใส่ส่วนลด (%) แบบติดลบ
+            <div>
+                <p><strong>(EN) Excel Preparation:</strong> Organize data into 3 columns: Category, Item Name, and Price for bulk importing.</p>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Category (หมวดหมู่)</th>
+                    <th>Item Name (ชื่ออาหาร)</th>
+                    <th>Price (ราคา)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>จานเดียว</td><td>ข้าวกะเพราหมูสับ</td><td>60</td></tr>
+                <tr><td>ของว่าง</td><td>ปอเปี๊ยะทอด</td><td>50</td></tr>
+                <tr><td>ยำ</td><td>ยำวุ้นเส้น</td><td>70</td></tr>
+                <tr><td>เครื่องดื่ม</td><td>ชาเย็น</td><td>40</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size: 0.8rem; color: #64748b; margin-top: 10px;">* รองรับไฟล์นามสกุล .csv หรือ .xlsx ตามโครงสร้างด้านบน</p>
+    </div>
+
+    <div class="lang-section">
+        <!-- ภาษาไทย -->
+        <div class="thai-version">
+            <div class="section">
+                <h2>📌 เกี่ยวกับแอป</h2>
+                <p>แอปช่วยบันทึกรายการขาย/ค่าใช้จ่ายแบบกดปุ่ม แทนการพิมพ์เลขทีละบรรทัด เหมาะสำหรับร้านที่มีรายการคงที่ มีระบบคำนวณยอดรวมอัตโนมัติ และรองรับการทำงานหลายคิวพร้อมกัน</p>
+            </div>
+
+            <div class="section">
+                <h2>🎮 วิธีการใช้งาน</h2>
+                <h3>การจัดการหน่วยความจำ</h3>
+                <ul>
+                    <li>สลับได้ <strong>10 ช่อง</strong> เพื่อแยกโต๊ะหรือคิว</li>
+                    <li>ปุ่ม <strong>"สรุป"</strong> ดูยอดรวมและสั่งพิมพ์</li>
+                </ul>
+
+                <h3>โหมดการทำงาน</h3>
+                <div class="grid">
+                    <div class="box plus"><strong>โหมดเพิ่ม (+)</strong> กดเพื่อเพิ่มรายการ</div>
+                    <div class="box minus"><strong>โหมดลบ (−)</strong> กดเพื่อลดจำนวน/ใส่ส่วนลด</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- English Version -->
+        <div class="english-version">
+            <div class="section">
+                <h2>📌 About App</h2>
+                <p>A button-based sales/expense recorder. Ideal for businesses with fixed menus. Features automatic total calculation and supports up to 10 concurrent queues/tables.</p>
+            </div>
+
+            <div class="section">
+                <h2>🎮 How to Use</h2>
+                <h3>Memory Management</h3>
+                <ul>
+                    <li>Switch between <strong>10 slots</strong> for different queues.</li>
+                    <li><strong>"Summary"</strong> button to view totals and print.</li>
+                </ul>
+
+                <h3>Operation Modes</h3>
+                <div class="grid">
+                    <div class="box plus"><strong>Add Mode (+)</strong> Tap to add items.</div>
+                    <div class="box minus"><strong>Sub Mode (−)</strong> Tap to reduce or add discounts.</div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2>⚙️ การตั้งค่า</h2>
-        <ul>
-            <li><strong>ชื่อผู้ใช้งาน:</strong> สำหรับแสดงบนหัวเอกสาร</li>
-            <li><strong>จัดการปุ่ม:</strong> เพิ่ม/แก้ไข สินค้าและราคา (รองรับ Excel)</li>
-            <li><strong>หน่วยความจำ:</strong> ตั้งชื่อช่องทั้ง 10 ช่องให้จดจำง่าย</li>
-        </ul>
-    </div>
-
     <div class="contact-box">
-        <h3>📧 ต้องการความช่วยเหลือหรือมีข้อเสนอแนะ?</h3>
-        <p>หากคุณโอ๋พบปัญหาการใช้งาน หรือมีคำแนะนำในการพัฒนาแอป<br>สามารถติดต่อทีมงานได้โดยตรงที่</p>
-        <a href="mailto:teerar.ssa@gmail.com" class="btn-email">ส่งอีเมลถึงเรา: teerar.ssa@gmail.com</a>
+        <h3>📧 Need Help? | ต้องการความช่วยเหลือ?</h3>
+        <p>หากคุณโอ๋พบปัญหาการใช้งาน หรือมีคำแนะนำในการพัฒนาแอป สามารถติดต่อเราได้ที่</p>
+        <p>If you encounter any issues or have suggestions, please contact us directly.</p>
+        <a href="mailto:teerar.ssa@gmail.com" class="btn-email">teerar.ssa@gmail.com</a>
     </div>
 
     <p style="text-align: center; color: #64748b; font-size: 0.8rem; margin-top: 30px;">
-        © 2026 GoodCalc - มั่นใจในทุกยอดขาย
+        © 2026 GoodCalc - มั่นใจในทุกยอดขาย | Confident in every sale
     </p>
 </div>
 
